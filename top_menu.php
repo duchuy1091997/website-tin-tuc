@@ -1,5 +1,5 @@
 <?php 
-require_once("./Entities/loaitin.class.php");
+require_once("./Entities/theloai.class.php");
 ?>
 
 <nav class="navbar navbar-inverse">
@@ -15,16 +15,16 @@ require_once("./Entities/loaitin.class.php");
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
                 <?php 
-                    $loaiTin = LoaiTin::list_loai_tin();
-
-                    if (is_array($loaiTin) || is_object($loaiTin)) {
-                        foreach ($loaiTin as $item) {
-                            echo "<li><a href='#'>" . $item["tenloaitin"] . "</a></li>";
-                        }
+                $theLoai = TheLoai::list_the_loai();
+                if (is_array($theLoai) || is_object($theLoai)) {
+                    foreach ($theLoai as $item) {
+                        echo "<li><a href='#'>" . $item["Ten"] . "</a></li>";
                     }
+                }
                 ?>
             </ul>
             <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
                 <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
             </ul>
         </div>

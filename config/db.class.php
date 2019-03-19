@@ -22,6 +22,7 @@
             //khởi tạo kết nối
             $connection = $this->connect();
             //execute truy vấn
+            $connection->query("SET NAMES utf8");
             $result = $connection->query($queryString);
             $connection->close();
             return $result;

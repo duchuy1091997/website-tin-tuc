@@ -1,7 +1,7 @@
 <?php 
     require_once("./config/db.class.php");
 
-    class BaiViet{
+    class TinTuc{
         public $idBaiViet;
         public $anhMinhHoa;
         public $tenBaiViet;
