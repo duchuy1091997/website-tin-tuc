@@ -13,7 +13,7 @@ if (!isset($_GET["idtheloai"])) {
 $theloai = TheLoai::list_the_loai();
 $getTheLoai = TheLoai::get_the_loai($idtheloai); 
 ?>
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse top-menu">
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -49,14 +49,14 @@ $getTheLoai = TheLoai::get_the_loai($idtheloai);
                 <div class="row-item row">
                     <div class="col-md-12">
                         <div class="col-md-4">
-                            <a href="#">
+                            <a href="/websitetintuc/chi_tiet_tin.php?idTinTuc=<?php echo $item["id"]; ?>">
                                 <img class="img-responsive" src=<?php echo "./public/img/".$item["Hinh"]; ?> alt="hinhminhhoa">
                             </a>
                         </div>
                         <div class="col-md-8">
                             <h3><?php echo $item["TieuDe"]; ?></h3>
                             <p><?php echo $item["TomTat"]; ?></p>
-                            <a class="btn btn-danger" href="#">Xem chi tiết</a>
+                            <a class="btn btn-danger" href="/websitetintuc/chi_tiet_tin.php?idTinTuc=<?php echo $item["id"]; ?>">Xem chi tiết</a>
                         </div>
                     </div>
                     <div class="break"></div>

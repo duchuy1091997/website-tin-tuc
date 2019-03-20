@@ -19,3 +19,9 @@ footer {
     margin: auto;
     border-bottom: 1px solid #EEEEEE;
 }
+
+.navbar .navbar-inverse .top-menu{
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}

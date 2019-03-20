@@ -48,14 +48,14 @@ $theloai = TheLoai::list_the_loai();
                     <div class="col-md-12">
                         <h3><a href=<?php echo "./the_loai.php?idtheloai=".$item["idTheLoai"]. ">"; ?> <?php echo $item["Ten"];?></a> </h3> 
                         <div class="col-md-4">
-                            <a href="#">
+                            <a href="/websitetintuc/chi_tiet_tin.php?idTinTuc=<?php echo $item["id"]; ?>">
                                 <img class="img-responsive" src=<?php echo "./public/img/".$item["Hinh"]; ?> alt="hinhminhhoa">
                             </a>
                         </div>
                         <div class="col-md-8">
                             <h3><?php echo $item["TieuDe"]; ?></h3>
                             <p><?php echo $item["TomTat"]; ?></p>
-                            <a class="btn btn-danger" href="#">Xem chi tiết</a>
+                            <a class="btn btn-danger" href="/websitetintuc/chi_tiet_tin.php?idTinTuc=<?php echo $item["id"]; ?>">Xem chi tiết</a>
                         </div>
                     </div>
                     <div class="break"></div>

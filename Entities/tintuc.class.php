@@ -56,9 +56,9 @@ class TinTuc
         return $result;
     }
     //lấy danh sách tin cùng thể loại
-    public static function list_product_relate($idtheloai, $id){
+    public static function list_tin_tuc_relate($idtheloai, $id){
         $db = new Db();
-        $sql = "SELECT * FROM tintuc WHERE idTheLoai='$idtheloai' AND id!='$id'";
+        $sql = "SELECT * FROM tintuc WHERE idTheLoai='$idtheloai' AND id!='$id' LIMIT 0,3";
         $result = $db->select_to_array($sql);
         return $result;
     }
