@@ -1,7 +1,16 @@
 <?php 
 require_once("./Entities/theloai.class.php");
+require_once("./Entities/tintuc.class.php");
 ?>
-
+<?php 
+if (!isset($_GET["idtheloai"])) {
+    $lstTinTuc = TinTuc::list_tin_tuc_by_the_loai();
+} else {
+    $idtheloai = $_GET["idtheloai"];
+    $lstTinTuc = TinTuc::list_tin_tuc_by_idtheloai($idtheloai);
+}
+$theloai = TheLoai::list_the_loai();
+?>
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -16,11 +25,9 @@ require_once("./Entities/theloai.class.php");
             <ul class="nav navbar-nav">
                 <?php 
                 $theLoai = TheLoai::list_the_loai();
-                if (is_array($theLoai) || is_object($theLoai)) {
                     foreach ($theLoai as $item) {
-                        echo "<li><a href='#'>" . $item["Ten"] . "</a></li>";
+                        echo "<li><a href=./trang_chinh.php?idtheloai=" . $item["id"] . ">" . $item["Ten"] . "</a></li>";
                     }
-                }
                 ?>
             </ul>
             <ul class="nav navbar-nav navbar-right">

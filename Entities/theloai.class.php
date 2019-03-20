@@ -19,5 +19,12 @@
             $result = $db->select_to_array($sql);
             return $result;
         }
+
+        public static function get_the_loai($id){
+            $db = new Db();
+            $sql = "SELECT Ten FROM theloai WHERE id = '$id'";
+            $result = $db->select_to_array($sql);
+            return $result;
+        }
     }
 ?>
