@@ -9,6 +9,7 @@ if (!isset($_GET["idTinTuc"])) {
     $idTinTuc = $_GET["idTinTuc"];
     $chitiettin = reset(TinTuc::get_chi_tiet_tin($idTinTuc));
     $tinlienquan = TinTuc::list_tin_tuc_relate($chitiettin["idTheLoai"], $idTinTuc);
+    $tinnoibat = TinTuc::list_tin_tuc_noi_bat($idTinTuc);
 }
 $theloai = TheLoai::list_the_loai();
 ?>
@@ -31,15 +32,15 @@ $theloai = TheLoai::list_the_loai();
                 ?>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                <li><a href="/websitetintuc/dangky.php"><span class="glyphicon glyphicon-user"></span> Đăng ký</a></li>
+                <li><a href="/websitetintuc/dangnhap.php"><span class="glyphicon glyphicon-log-in"></span> Đăng nhập</a></li>
             </ul>
         </div>
     </div>
 </nav>
 <div class="row">
     <div class="col-md-3">
-        <div class="panel panel-danger">
+        <div class="panel panel-primary">
             <div class="panel-heading"><h3>Tin liên quan</h3></div>
             <div class="panel-body">
                 <?php 
@@ -60,6 +61,27 @@ $theloai = TheLoai::list_the_loai();
                     <?php } ?>
             </div>
         </div>
+        <div class="panel panel-danger">
+            <div class="panel-heading"><h3>Tin nổi bật</h3></div>
+            <div class="panel-body">
+                <?php 
+                    foreach ($tinnoibat as $item) {?>
+                    <div class="row">
+                        <div class="col-md-5">
+                            <a href="/websitetintuc/chi_tiet_tin.php?idTinTuc=<?php echo $item["id"]; ?>"> 
+                                <img class="img-responsive" src=<?php echo "./public/img/".$item["Hinh"];?> alt="anhminhhoa">
+                            </a>
+                        </div>
+                        <div class="col-md-7">
+                            <a href="/websitetintuc/chi_tiet_tin.php?idTinTuc=<?php echo $item["id"]; ?>"> 
+                                <p><?php echo $item["TieuDe"]; ?></p>
+                            </a>
+                        </div>
+                        <div class="break"></div>
+                    </div>
+                    <?php } ?>
+            </div>
+        </div>      
     </div>
     <div class="col-md-9">
         <h1><?php echo $chitiettin["TieuDe"] ?></h1>

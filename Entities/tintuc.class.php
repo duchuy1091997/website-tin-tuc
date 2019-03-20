@@ -48,10 +48,13 @@ class TinTuc
         return $result;
     }
     //Lấy ds tin tức theo loại
-    public static function list_tin_tuc_by_idtheloai($idtheloai)
+    public static function list_tin_tuc_by_idtheloai($idtheloai, $vitri=-1, $limit=-1)
     {
         $db = new Db();
         $sql = "SELECT * FROM tintuc WHERE idTheLoai = '$idtheloai'";
+        if ($vitri > -1 && $limit > 1) {
+            $sql .= " LIMIT $vitri, $limit";
+        }
         $result = $db->select_to_array($sql);
         return $result;
     }
@@ -59,6 +62,13 @@ class TinTuc
     public static function list_tin_tuc_relate($idtheloai, $id){
         $db = new Db();
         $sql = "SELECT * FROM tintuc WHERE idTheLoai='$idtheloai' AND id!='$id' LIMIT 0,3";
+        $result = $db->select_to_array($sql);
+        return $result;
+    }
+    //lấy danh sách tin nổi bật
+    public static function list_tin_tuc_noi_bat($id){
+        $db = new Db();
+        $sql = "SELECT * FROM tintuc WHERE NoiBat=1 AND id!='$id' LIMIT 0,3";
         $result = $db->select_to_array($sql);
         return $result;
     }

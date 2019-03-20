@@ -30,14 +30,14 @@ $theloai = TheLoai::list_the_loai();
                 ?>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                <li><a href="/websitetintuc/dangky.php"><span class="glyphicon glyphicon-user"></span> Đăng ký</a></li>
+                <li><a href="/websitetintuc/dangnhap.php"><span class="glyphicon glyphicon-log-in"></span> Đăng nhập</a></li>
             </ul>
         </div>
     </div>
 </nav> 
 <div class="col-md-12">
-    <div class="panel panel-danger">
+    <div class="panel panel-primary">
         <div class="panel-heading">
             <h3>Tin tức</h3>
         </div>
