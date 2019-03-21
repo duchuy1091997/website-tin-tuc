@@ -35,7 +35,7 @@ $theloai = TheLoai::list_the_loai();
             </ul>
         </div>
     </div>
-</nav> 
+</nav>
 <div class="col-md-12">
     <div class="panel panel-primary">
         <div class="panel-heading">

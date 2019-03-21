@@ -79,5 +79,12 @@ class TinTuc
         $result = $db->select_to_array($sql);
         return $result;
     }
+    //tìm kiếm tin
+    public static function search($keyword){
+        $db = new Db();
+        $sql = "SELECT * FROM tintuc WHERE TieuDe='$keyword'";
+        $result = $db->select_to_array($sql);
+        return $result;
+    }
 }
  
