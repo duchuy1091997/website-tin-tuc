@@ -40,8 +40,8 @@ $getTheLoai = TheLoai::get_the_loai($idtheloai);
                 ?>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Đăng ký</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Đăng nhập</a></li>
+                <li><a href="/websitetintuc/dangky.php"><span class="glyphicon glyphicon-user"></span> Đăng ký</a></li>
+                <li><a href="/websitetintuc/dangnhap.php"><span class="glyphicon glyphicon-log-in"></span> Đăng nhập</a></li>
             </ul>
         </div>
     </div>
