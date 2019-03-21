@@ -76,22 +76,22 @@ if (isset($_POST["submit"])){
                 <form method="POST" action="">
                     <div>
                         <label>Họ tên</label>
-                        <input type="text" class="form-control" placeholder="Username" name="name" aria-describedby="basic-addon1">
+                        <input type="text" class="form-control" placeholder="Username" name="name" aria-describedby="basic-addon1" required="true">
                     </div>
                     <br>
                     <div>
                         <label>Email</label>
-                        <input type="email" class="form-control" placeholder="Email" name="email" aria-describedby="basic-addon1">
+                        <input type="email" class="form-control" placeholder="Email" name="email" aria-describedby="basic-addon1" required="true">
                     </div>
                     <br>
                     <div>
                         <label>Nhập mật khẩu</label>
-                        <input type="password" class="form-control" name="password" aria-describedby="basic-addon1">
+                        <input type="password" class="form-control" name="password" aria-describedby="basic-addon1" required="true">
                     </div>
                     <br>
                     <div>
                         <label>Nhập lại mật khẩu</label>
-                        <input type="password" class="form-control" name="repassword" aria-describedby="basic-addon1">
+                        <input type="password" class="form-control" name="repassword" aria-describedby="basic-addon1" required="true">
                     </div>
                     <br>
                     <button type="submit" name="submit" class="btn btn-success">Đăng ký</button>

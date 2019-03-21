@@ -13,7 +13,6 @@ if (isset($_POST["submit"])){
     $password = md5($_POST["password"]);
     $user = User::dangnhap($userEmail, $password);
     if ($user) {
-        print_r($user); die;
         $_SESSION['user_name'] = $user->name;
         header("Location: index.php");
         if(isset($_SESSION['user_error'])){
